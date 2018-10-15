@@ -142,3 +142,9 @@ import { View } from 'react-native';
      ? info
      : info[metric]
   }
+
+  export function getDailyReminderValue(){
+    return {
+      today: "👋 you didn't log any information for today"
+    }
+  }
