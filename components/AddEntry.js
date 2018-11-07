@@ -9,6 +9,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { submitEntry, resetEntry } from '../utils/api';
 import { addEntry } from '../actions';
 import { connect } from 'react-redux'; 
+import { NavigationActions } from 'react-navigation';
 
 function SubmitBtn({onPress}){
     return(
@@ -72,6 +73,8 @@ class AddEntry extends React.Component{
             eat:0
         });
 
+        this.toHome()
+
         submitEntry({key, entry});
     }
 
@@ -82,9 +85,15 @@ class AddEntry extends React.Component{
         this.props.dispatch(addEntry({
             [key]: getDailyReminderValue()
         }))
-        //Route to home
+        this.toHome()
         //Update the DB
         resetEntry(key);
+    }
+
+    toHome = () => {
+        this.props.navigation.dispatch(NavigationActions.back({
+            key: 'AddEntry'
+        }))
     }
 
     render(){
