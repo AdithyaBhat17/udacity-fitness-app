@@ -13,7 +13,7 @@
     "react": "16.3.1",
     "react-native": "https://github.com/expo/react-native/archive/sdk-30.0.0.tar.gz",
     "react-navigation": "^2.18.2",
-    "react-redux": "^5.0.7",
+    "react-redux": "^5.1.2",
     "redux": "^4.0.1",
     "udacifitness-calendar": "^11.0.0"
   }
